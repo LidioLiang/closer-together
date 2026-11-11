@@ -229,7 +229,7 @@ function render(){
  if(spinning) return;
  const text=current?current.question:mode==='friends'?'从一句近况，聊到心里。':'从一个话题开始，慢慢认识彼此。';
  $('question').textContent=displayQuestion(text);
- $('question').className='question'+(text.length>22?' long':'')+(text.length>36?' very-long':'');
+ $('question').className='question'+(text.length>22?' long':'')+(text.length>30?' very-long':'');
  const options=pool();
  const index=current?options.findIndex(q=>q.id===current.id):0;
  $('previous').textContent=options[(index-1+options.length)%options.length].question;
@@ -267,7 +267,7 @@ async function draw(){
   const options=pool();const selectedIndex=options.findIndex(q=>q.id===selected.id);
   const sequence=Array.from({length:23},()=>randomItem(options));
   sequence[20]=options[(selectedIndex-1+options.length)%options.length];sequence[21]=selected;sequence[22]=options[(selectedIndex+1)%options.length];
-  sequence.forEach(q=>{const row=document.createElement('div');row.className='reel-row'+(q.question.length>22?' long':'')+(q.question.length>36?' very-long':'');row.textContent=displayQuestion(q.question);track.append(row);});
+  sequence.forEach(q=>{const row=document.createElement('div');row.className='reel-row'+(q.question.length>22?' long':'')+(q.question.length>30?' very-long':'');row.textContent=displayQuestion(q.question);track.append(row);});
   if(!reducedMotion() && typeof track.animate==='function'){
    const animation=track.animate([{transform:'translateY(0)'},{transform:'translateY(calc(var(--row) * -20))'}],{duration:2800,easing:'cubic-bezier(.12,.65,.17,1)',fill:'forwards'});
    didAnimate=true;activeReel=animation;
