@@ -1,0 +1,26 @@
+{
+  "id": "./",
+  "name": "再靠近一点",
+  "short_name": "再靠近一点",
+  "description": "选一个话题，慢慢认识彼此。",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fcf0f2",
+  "theme_color": "#fae8eb",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
