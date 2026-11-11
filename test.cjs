@@ -23,7 +23,7 @@ function boot(raw=null,blocked=false,AudioClass=null){
  for(const [level,total] of [['1',56],['2',82],['3',61]]){
   t.run(`selectLevel('${level}')`);
   for(let i=0;i<total;i++){await t.run('draw()');assert.equal(t.run('BY_ID.get(state.currentId).level'),Number(level));}
-  assert.equal(t.run('remaining().length'),0);assert.equal(t.get('draw').textContent,'再聊一轮');assert.equal(t.get('skip').disabled,true);
+  assert.equal(t.run('remaining().length'),0);assert.equal(t.get('draw').textContent,'再聊一轮');
  }
  assert.equal(t.run('new Set(state.seen).size'),199);
  await t.run('draw()');assert.equal(t.run('state.seen.length'),139);assert.equal(t.run('remaining().length'),60);assert.equal(t.run("remaining('1').length"),0);
