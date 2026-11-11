@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="选一个话题，慢慢认识彼此。温柔的双人深度聊天，愿意分享多少，都由你决定。">
+<meta property="og:title" content="再靠近一点">
+<meta property="og:description" content="让每一次开口，都离彼此近一点。">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#fae8eb">
+<title>再靠近一点</title>
+<style>
+:root{color-scheme:light;--ink:#653c38;--row:132px;--serif:"Songti SC","STSong","Noto Serif CJK SC","SimSun",serif;--grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.28' filter='url(%23n)'/%3E%3C/svg%3E")}
+*{box-sizing:border-box}body{margin:0;min-height:100svh;color:var(--ink);font-family:var(--serif);background:radial-gradient(ellipse at 100% 0%,#ffead6b3,transparent 42%),radial-gradient(ellipse at 3% 58%,#f8d9e4a6,transparent 46%),radial-gradient(ellipse at 66% 95%,#f5d7df88,transparent 45%),#fcf0f2;isolation:isolate}button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}button:disabled{cursor:default}button:focus-visible{outline:2px solid #a45b64;outline-offset:6px}.ambient{position:fixed;inset:0;overflow:hidden;z-index:-1;pointer-events:none}.ambient::before,.ambient::after{content:"";position:absolute;width:62vw;height:115vh;border:1px solid #fff9;box-shadow:inset 10px 0 60px #fff5;border-radius:49% 46% 47% 43%;background:linear-gradient(135deg,#fff1,#efbecd2b);transform:rotate(36deg)}.ambient::before{right:86%;top:-34%}.ambient::after{left:88%;top:5%;transform:rotate(-26deg)}main{width:min(930px,100%);margin:auto;padding:36px 28px 28px;text-align:center}header h1{font-size:clamp(42px,5.2vw,68px);font-weight:500;letter-spacing:.12em;line-height:1.25;margin:0;padding-left:.12em;color:#713e3d}.flourish{display:block;width:220px;height:22px;margin:-2px auto 6px;fill:none;stroke:#d19a9b;stroke-width:1.1}.subtitle{font-size:18px;letter-spacing:.22em;line-height:1.9;margin:7px 0 0;color:#875854}.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;width:85%;margin:42px auto 24px}.level{min-height:58px;padding:9px 12px;border:1px solid #fffc;border-radius:999px;background:linear-gradient(130deg,#ffffff8c,#fff7f640);box-shadow:0 9px 18px #ad6b7610,inset 0 1px 1px #fffc;font-size:23px;letter-spacing:.05em;transition:background .3s,box-shadow .3s,transform .3s}.level[aria-pressed="true"]{background:linear-gradient(140deg,#fbdde0,#f1bbc1);border-color:#fff8;box-shadow:0 7px 19px #b9758026,inset 0 1px 2px #fff9;color:#66342f}.level:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 9px 24px #b9758026}.level:disabled{opacity:.68}
+.scroll-frame{position:relative;padding:16px;border-radius:38px;background:var(--grain),linear-gradient(135deg,#fff9f2,#f6dfd4 65%,#fff5e9);border:1px solid #fffdf9;box-shadow:0 22px 32px -15px #935e5866,0 4px 8px #9c665b15,inset 0 2px 3px #fff,inset 0 -2px 2px #d9b4a080}.well{height:calc(var(--row)*3);position:relative;border-radius:26px;overflow:hidden;background:linear-gradient(90deg,#d8b7a8,#f0dace 10%,#edcdbf 90%,#d2ac9f);box-shadow:inset 0 10px 16px #79513c45,inset 0 -6px 10px #a67d6140}.sheet{position:absolute;inset:0;border-radius:6.5% / 49%;overflow:hidden;background:linear-gradient(180deg,#d8b5a380 0%,#eed4c429 14%,#fffaf133 37%,#fffcf655 50%,#f8e8db55 66%,#e7c5b970 88%,#cba3938c 100%),#fff4eb;box-shadow:inset 0 14px 20px -13px #75432f8a,inset 0 -17px 26px -18px #70422d80,3px 0 7px #825a4933,-3px 0 7px #825a4933}.sheet::before{content:"";position:absolute;inset:0;background-image:var(--grain);opacity:.55;mix-blend-mode:multiply;pointer-events:none;z-index:3}.sheet::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#ad806a12,transparent 9%,transparent 91%,#ad806a12);pointer-events:none;z-index:4}.selection{position:absolute;top:var(--row);height:var(--row);left:2%;right:2%;border-top:1px solid #fff9;border-bottom:1px solid #d8a89e40;box-shadow:0 -1px #d8a89e33,0 1px #fff9;z-index:4;pointer-events:none;background:linear-gradient(90deg,#fff8ee11,#fff8ee33,#fff8ee11)}.selection::before,.selection::after{content:"";position:absolute;top:50%;height:1px;width:7%;background:#c18a7d66}.selection::before{left:3%}.selection::after{right:3%}.rest{position:relative;z-index:5;display:grid;grid-template-rows:repeat(3,var(--row))}.neighbor{font-size:27px;padding:12px 12%;margin:0;display:flex;align-items:center;justify-content:center;line-height:1.6;color:#997260;filter:blur(2px);opacity:.5;transform:scale(.95);user-select:none;overflow:hidden}.neighbor:first-child{transform:perspective(400px) rotateX(-16deg) scale(.94)}.neighbor:last-child{transform:perspective(400px) rotateX(16deg) scale(.94)}.question{margin:0;display:flex;align-items:center;justify-content:center;padding:8px 12%;font-size:39px;line-height:1.45;letter-spacing:.035em;font-weight:600;white-space:pre-line;overflow-wrap:anywhere;text-wrap:pretty;color:#62352c;text-shadow:0 1px #fff8}.question.long{font-size:31px}.reel{position:absolute;inset:0;z-index:5;overflow:hidden;mask-image:linear-gradient(transparent,#0007 12%,#000 34%,#000 66%,#0007 88%,transparent);-webkit-mask-image:linear-gradient(transparent,#0007 12%,#000 34%,#000 66%,#0007 88%,transparent)}.track{will-change:transform}.reel-row{height:var(--row);padding:8px 12%;display:flex;align-items:center;justify-content:center;line-height:1.45;font-size:32px;white-space:pre-line;text-wrap:pretty;overflow-wrap:anywhere}.reel-row.long{font-size:28px}
+.actions{display:flex;align-items:center;flex-direction:column;margin-top:34px;gap:8px}.primary{width:min(400px,76%);min-height:72px;border-radius:999px;border:1px solid #fff8;background:linear-gradient(160deg,#df969b,#bd6765 70%,#b15b58);color:#fff9f2;font-size:29px;letter-spacing:.13em;box-shadow:0 12px 25px #bc737c28,inset 0 1px 2px #fffb,inset 0 -2px 7px #a3515133;text-shadow:0 1px #9c525b33;transition:transform .25s,filter .25s,box-shadow .25s}.primary:hover:not(:disabled){filter:brightness(1.04);transform:translateY(-2px);box-shadow:0 15px 28px #bc737c38}.primary:active:not(:disabled){transform:translateY(1px)}.primary:disabled{filter:saturate(.65);opacity:.78}.skip{min-height:44px;border:0;background:none;font-size:20px;text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:1px;letter-spacing:.08em;padding:3px 16px;color:#8b5d54}.skip:disabled{opacity:.35}.gentle{display:flex;align-items:center;justify-content:center;gap:28px;margin:26px auto 0;color:#956960;min-height:58px}.gentle::before,.gentle::after{content:"";height:1px;width:72px;flex-shrink:0;background:linear-gradient(90deg,transparent,#d6a4a466)}.gentle::after{transform:rotate(180deg)}#gentle-text{margin:0;min-height:32px;font-size:18px;line-height:1.8;letter-spacing:.12em;transition:opacity .65s ease,transform .65s ease;max-width:470px}#gentle-text.changing{opacity:0;transform:translateY(4px)}.small-notice{font:13px/1.7 system-ui,sans-serif;color:#976a62;margin:12px auto 0;max-width:520px}.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}[hidden]{display:none!important}
+@media(min-width:701px) and (max-height:950px){:root{--row:100px}main{max-width:850px;padding-top:22px;padding-bottom:20px}header h1{font-size:48px}.subtitle{font-size:16px}.levels{margin-top:24px;margin-bottom:18px}.level{min-height:46px;font-size:20px}.question{font-size:28px}.question.long{font-size:24px}.reel-row{font-size:28px}.reel-row.long{font-size:24px}.actions{margin-top:22px}.primary{min-height:56px;font-size:24px}.gentle{margin-top:18px;min-height:46px}}
+@media(max-width:700px){:root{--row:144px}main{padding:35px 18px 24px}header h1{font-size:46px;letter-spacing:.09em}.subtitle{font-size:14px;letter-spacing:.08em}.flourish{width:170px;height:20px}.levels{width:100%;gap:9px;margin-top:30px;margin-bottom:22px}.level{min-height:48px;font-size:17px;letter-spacing:0;padding:8px 4px}.scroll-frame{border-radius:27px;padding:11px}.well{border-radius:18px}.question{font-size:26px;padding-inline:10%;line-height:1.55;white-space:normal}.question.long{font-size:24px}.neighbor{font-size:21px;padding-inline:10%;filter:blur(1.5px)}.selection::before,.selection::after{width:4%}.reel-row{font-size:26px;padding-inline:10%;line-height:1.5;white-space:normal}.reel-row.long{font-size:23px}.actions{margin-top:28px}.primary{width:80%;min-height:62px;font-size:25px}.skip{font-size:18px}.gentle{gap:12px;margin-top:20px;min-height:68px}.gentle::before,.gentle::after{width:28px}#gentle-text{font-size:15px;letter-spacing:.04em;max-width:280px}}
+@media(max-width:390px){:root{--row:144px}header h1{font-size:40px}.level{font-size:15px}.question{font-size:24px}.question.long{font-size:21px}.reel-row{font-size:25px}.reel-row.long{font-size:21px}.gentle::before,.gentle::after{width:16px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+.sound-toggle{position:fixed;right:20px;top:18px;z-index:10;display:flex;align-items:center;gap:7px;min-height:40px;padding:7px 11px;border:1px solid #fff9;border-radius:999px;background:#fff6;color:#976766;box-shadow:0 3px 12px #b9758010;font:13px/1.3 system-ui,sans-serif;backdrop-filter:blur(8px)}.sound-toggle svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.sound-toggle[aria-pressed="false"]{color:#a38a86}.sound-toggle:disabled{opacity:.5}@media(max-width:700px){.sound-toggle{top:10px;right:12px;font-size:12px;min-height:34px;padding:6px 9px}main{padding-top:56px}}
+/* Responsive layout: preserve readable topics and comfortable touch targets. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}main{padding-left:max(28px,env(safe-area-inset-left));padding-right:max(28px,env(safe-area-inset-right));padding-bottom:max(24px,env(safe-area-inset-bottom))}.level{white-space:nowrap;min-width:0}.sound-toggle{top:max(14px,env(safe-area-inset-top));right:max(16px,env(safe-area-inset-right));min-height:44px}.question,.reel-row{min-width:0}.gentle{height:68px}.gentle #gentle-text{min-width:0}
+@media(max-width:700px){:root{--row:clamp(110px,14svh,128px)}main{padding:54px max(16px,env(safe-area-inset-right)) max(20px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}header h1{font-size:clamp(34px,10.5vw,46px)}.subtitle{font-size:clamp(12px,3.5vw,15px);letter-spacing:.06em}.flourish{height:18px}.levels{gap:8px;margin:24px auto 18px}.level{min-height:46px;font-size:clamp(14px,4vw,18px);padding:7px 4px}.question,.reel-row{font-size:clamp(22px,5.5vw,26px);line-height:1.45;padding:8px 9%;letter-spacing:0;white-space:normal}.question.long,.reel-row.long{font-size:clamp(20px,5vw,24px)}.neighbor{font-size:clamp(17px,4.3vw,22px)}.actions{gap:5px;margin-top:22px}.primary{min-height:56px;width:82%;font-size:24px}.skip{min-height:44px}.gentle{margin-top:12px;height:62px;min-height:62px;gap:10px}.gentle::before,.gentle::after{width:18px}#gentle-text{font-size:14px;letter-spacing:.02em;line-height:1.7}.sound-toggle{font-size:12px;top:max(6px,env(safe-area-inset-top));right:max(10px,env(safe-area-inset-right));min-height:44px}}
+@media(max-height:520px) and (orientation:landscape){:root{--row:92px}main{max-width:1020px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.65fr);align-items:center;column-gap:28px;padding-top:48px}header{grid-column:1;grid-row:1}header h1{font-size:34px}.subtitle{font-size:12px;letter-spacing:0}.levels{grid-column:1;grid-row:2;width:100%;margin:14px 0;gap:5px}.level{font-size:14px;min-height:44px}#card{grid-column:2;grid-row:1 / span 4}.actions{grid-column:1;grid-row:3;margin-top:0}.primary{width:90%;min-height:48px;font-size:20px}.gentle{grid-column:1;grid-row:4;margin-top:0;height:54px}.gentle::before,.gentle::after{display:none}#gentle-text{font-size:13px}#exhausted,#storage-note{grid-column:1 / -1}.question,.reel-row{font-size:22px;line-height:1.4;padding:6px 9%;white-space:normal}.question.long,.reel-row.long{font-size:19px}.neighbor{font-size:18px}.scroll-frame{padding:11px}}
+@media(hover:none){.level:hover:not(:disabled),.primary:hover:not(:disabled){transform:none}}
+</style>
+</head>
+<body>
+<div class="ambient" aria-hidden="true"></div>
+<button id="sound-toggle" class="sound-toggle" type="button" aria-pressed="true" aria-label="关闭音效" title="关闭音效"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4Z"/><path id="sound-waves" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/><path id="sound-cross" d="m16 9 5 6m0-6-5 6"/></svg><span id="sound-label">音效开</span></button>
+<main>
+<header><h1>再靠近一点</h1><svg class="flourish" viewBox="0 0 240 28" aria-hidden="true"><path d="M8 21 C66 24 81 2 124 10 S177 29 232 12 M55 23 C104 21 120 0 174 8"/></svg><p class="subtitle">让每一次开口，都离彼此近一点</p></header>
+<nav class="levels" aria-label="选择聊天层次">
+<button type="button" class="level" data-level="1" aria-pressed="true">轻轻聊</button>
+<button type="button" class="level" data-level="2" aria-pressed="false">多懂你一点</button>
+<button type="button" class="level" data-level="3" aria-pressed="false">再靠近一点</button>
+</nav>
+<section id="card" class="scroll-frame" aria-label="话题纸卷轴" aria-busy="false">
+<div class="well"><div class="sheet">
+<div class="selection" aria-hidden="true"></div>
+<div id="rest" class="rest"><p id="previous" class="neighbor" aria-hidden="true"></p><h2 id="question" class="question">从一个话题开始，<br>慢慢认识彼此。</h2><p id="next" class="neighbor" aria-hidden="true"></p></div>
+<div id="reel" class="reel" aria-hidden="true" hidden><div id="track" class="track"></div></div>
+</div></div>
+</section>
+<p id="announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+<div class="actions"><button type="button" id="draw" class="primary">抽一个话题</button><button type="button" id="skip" class="skip" disabled>换个话题</button></div>
+<p id="exhausted" class="small-notice" hidden>这一层已经聊过一轮了。可以换个层次，也可以重新开始。</p>
+<footer class="gentle"><p id="gentle-text" aria-live="off">愿意分享多少，都由你决定</p></footer>
+<p id="storage-note" class="small-notice" hidden></p>
+<noscript><p class="small-notice">请启用浏览器的 JavaScript，开始抽题。</p></noscript>
+</main>
+<script id="topic-data" type="application/json">[{"id": 4, "source": "原题", "question": "童年记忆里最温暖的画面是？", "level": 1}, {"id": 10, "source": "原题", "question": "想到什么场景，会让你瞬间心安？", "level": 1}, {"id": 11, "source": "原题", "question": "哪一刻让你觉得“活着真好”？", "level": 1}, {"id": 17, "source": "原题", "question": "哪座城市承载了你特别的回忆？", "level": 1}, {"id": 28, "source": "原题", "question": "坚持最久的一个习惯是什么？", "level": 1}, {"id": 31, "source": "原题", "question": "什么气味会让你觉得安心？", "level": 1}, {"id": 35, "source": "原题", "question": "如果可以，你最想拥有什么超能力？", "level": 1}, {"id": 37, "source": "原题", "question": "你内心藏着什么不为人知的小骄傲？", "level": 1}, {"id": 44, "source": "原题", "question": "陌生人给过你怎样的温暖？", "level": 1}, {"id": 54, "source": "原题", "question": "最近一次被启发的瞬间？", "level": 1}, {"id": 64, "source": "原题", "question": "此时此刻，最想感谢谁？", "level": 1}, {"id": 67, "source": "原题", "question": "描述一下你眼中的“幸福”画面。", "level": 1}, {"id": 68, "source": "原题", "question": "那个放弃了却还在心里的梦想是？", "level": 1}, {"id": 71, "source": "原题", "question": "有没有一句鼓励，支撑你走了很远？", "level": 1}, {"id": 73, "source": "原题", "question": "冬天里让你觉得温暖的小事？", "level": 1}, {"id": 80, "source": "原题", "question": "哪首歌是你的人生BGM？", "level": 1}, {"id": 89, "source": "原题", "question": "有什么事做起来让你忘了时间？", "level": 1}, {"id": 91, "source": "原题", "question": "还有没有特别想去却没去的地方？", "level": 1}, {"id": 92, "source": "原题", "question": "最近有没有被哪个风景/人惊艳到？", "level": 1}, {"id": 94, "source": "原题", "question": "你希望老了以后过什么样的生活？", "level": 1}, {"id": 96, "source": "原题", "question": "今年最想实现的一个小目标？", "level": 1}, {"id": 100, "source": "新增", "question": "小时候的你，曾认真相信过什么可爱的事？", "level": 1}, {"id": 101, "source": "新增", "question": "哪一道家常菜，能让你想起一个人？", "level": 1}, {"id": 102, "source": "新增", "question": "你一直舍不得丢掉的小东西，藏着什么故事？", "level": 1}, {"id": 103, "source": "新增", "question": "如果给最近的生活起个名字，你会叫什么？", "level": 1}, {"id": 104, "source": "新增", "question": "哪一个平凡的日子，你到现在还记得很清楚？", "level": 1}, {"id": 105, "source": "新增", "question": "小时候最盼望的事，现在还会让你开心吗？", "level": 1}, {"id": 106, "source": "新增", "question": "你身上有什么小习惯，一看就知道来自家里人？", "level": 1}, {"id": 107, "source": "新增", "question": "有没有一个地方，你一走进去就会放松下来？", "level": 1}, {"id": 108, "source": "新增", "question": "最近一次发自内心地笑，是因为什么？", "level": 1}, {"id": 109, "source": "新增", "question": "你最想把生活里的哪一个片刻，留在照片里？", "level": 1}, {"id": 110, "source": "新增", "question": "别人记住你的哪个小喜好，会让你特别开心？", "level": 1}, {"id": 111, "source": "新增", "question": "哪一次临时起意，让你觉得幸好自己去了？", "level": 1}, {"id": 112, "source": "新增", "question": "你喜欢怎样结束忙碌的一天？", "level": 1}, {"id": 113, "source": "新增", "question": "如果明天不用考虑任何安排，你想怎么过？", "level": 1}, {"id": 114, "source": "新增", "question": "有没有一种声音，会把你带回某段回忆？", "level": 1}, {"id": 115, "source": "新增", "question": "哪一份不贵重的礼物，你一直珍藏着？", "level": 1}, {"id": 116, "source": "新增", "question": "有什么小事，是你生活里不能少的仪式感？", "level": 1}, {"id": 117, "source": "新增", "question": "和熟悉的人待在一起时，你会露出怎样的另一面？", "level": 1}, {"id": 118, "source": "新增", "question": "什么样的聊天，会让你舍不得说晚安？", "level": 1}, {"id": 119, "source": "新增", "question": "你会因为什么小细节，对一个人产生好感？", "level": 1}, {"id": 120, "source": "新增", "question": "第一次见面时，你通常会留意对方什么？", "level": 1}, {"id": 121, "source": "新增", "question": "什么样的邀约，会让你心里偷偷期待？", "level": 1}, {"id": 122, "source": "新增", "question": "和一个人一起做什么，最容易让你放松下来？", "level": 1}, {"id": 123, "source": "新增", "question": "收到好消息时，你习惯怎样和别人分享？", "level": 1}, {"id": 124, "source": "新增", "question": "如果带一个人认识你的家乡，你最想先带他去哪里？", "level": 1}, {"id": 125, "source": "新增", "question": "有没有一种你喜欢的东西，很少有人和你一样喜欢？", "level": 1}, {"id": 126, "source": "新增", "question": "哪一次尝试，让你发现自己还有这样的一面？", "level": 1}, {"id": 127, "source": "新增", "question": "什么样的天气，会让你特别想找个人一起出门？", "level": 1}, {"id": 128, "source": "新增", "question": "有没有一件小事，你觉得两个人做会更有意思？", "level": 1}, {"id": 129, "source": "新增", "question": "你想给未来的日子，保留哪一个现在的习惯？", "level": 1}, {"id": 130, "source": "新增", "question": "哪一句夸奖，让你偷偷开心了很久？", "level": 1}, {"id": 131, "source": "新增", "question": "如果给小时候的自己送一份礼物，你会选什么？", "level": 1}, {"id": 132, "source": "新增", "question": "你通常怎样把一个普通的日子过得特别一点？", "level": 1}, {"id": 133, "source": "新增", "question": "你想让刚认识你的人，先了解你的哪一面？", "level": 1}, {"id": 134, "source": "新增", "question": "聊到现在，有什么是你发现我们很像的地方？", "level": 1}, {"id": 3, "source": "原题", "question": "哪一个瞬间，让你觉得自己被治愈了？", "level": 2}, {"id": 5, "source": "原题", "question": "真正让你瞬间长大的那件事。", "level": 2}, {"id": 7, "source": "原题", "question": "此时此刻，你对自己满意吗？", "level": 2}, {"id": 9, "source": "原题", "question": "你究竟想成为一个什么样的人？", "level": 2}, {"id": 13, "source": "原题", "question": "独处的时候，你通常在想什么？", "level": 2}, {"id": 18, "source": "原题", "question": "经历这么多，还相信好人有好报吗？", "level": 2}, {"id": 20, "source": "原题", "question": "谁的存在让你觉得踏实？", "level": 2}, {"id": 21, "source": "原题", "question": "你会为了面子而委屈自己吗？", "level": 2}, {"id": 25, "source": "原题", "question": "你会为了现实向理想妥协吗？", "level": 2}, {"id": 26, "source": "原题", "question": "哪一瞬间，你觉得自己足够好了？", "level": 2}, {"id": 29, "source": "原题", "question": "抛开世俗，你认为的成功是什么？", "level": 2}, {"id": 30, "source": "原题", "question": "你最讨厌自己性格里的哪一点？", "level": 2}, {"id": 33, "source": "原题", "question": "什么是让你感到精神疲惫的根源？", "level": 2}, {"id": 34, "source": "原题", "question": "“家”对你来说意味着什么？", "level": 2}, {"id": 36, "source": "原题", "question": "成长路上，谁对你的影响最大？", "level": 2}, {"id": 38, "source": "原题", "question": "压力快爆炸时，你怎么发泄？", "level": 2}, {"id": 43, "source": "原题", "question": "你最怕别人用什么词评价你？", "level": 2}, {"id": 45, "source": "原题", "question": "看到什么画面会让你突然泪目？", "level": 2}, {"id": 46, "source": "原题", "question": "说实话，你有过真心的嫉妒吗？", "level": 2}, {"id": 47, "source": "原题", "question": "对未来最大的期待是什么？", "level": 2}, {"id": 48, "source": "原题", "question": "哪次失败，成了你蜕变的转折点？", "level": 2}, {"id": 49, "source": "原题", "question": "如果可以穿越，最想回到哪一刻？", "level": 2}, {"id": 51, "source": "原题", "question": "具体的哪件事让你觉得“被爱着”？", "level": 2}, {"id": 53, "source": "原题", "question": "成长对你来说意味着残酷还是礼物？", "level": 2}, {"id": 55, "source": "原题", "question": "哪次相遇，改变了你的人生轨迹？", "level": 2}, {"id": 57, "source": "原题", "question": "你对友情的底线在哪里？", "level": 2}, {"id": 60, "source": "原题", "question": "你相信命运是注定的吗？", "level": 2}, {"id": 62, "source": "原题", "question": "排序题：金钱、健康、爱什么最重要？", "level": 2}, {"id": 63, "source": "原题", "question": "你和真正自己和解了吗？", "level": 2}, {"id": 69, "source": "原题", "question": "看到什么，会让你觉得人类很渺小？", "level": 2}, {"id": 70, "source": "原题", "question": "随着年龄增长，你对时间的看法变了吗？", "level": 2}, {"id": 74, "source": "原题", "question": "你是习惯隐藏，还是习惯表达？", "level": 2}, {"id": 75, "source": "原题", "question": "人性的哪样特质你最珍视？", "level": 2}, {"id": 76, "source": "原题", "question": "你相信一见钟情，还是日久生情？", "level": 2}, {"id": 77, "source": "原题", "question": "什么时刻让你觉得自己“被需要”？", "level": 2}, {"id": 79, "source": "原题", "question": "被误解时，你会拼命解释吗？", "level": 2}, {"id": 81, "source": "原题", "question": "现在的你和五年前比，最大的变化是？", "level": 2}, {"id": 82, "source": "原题", "question": "什么样的朋友值得你深交？", "level": 2}, {"id": 83, "source": "原题", "question": "最近一次感到委屈是因为什么？", "level": 2}, {"id": 85, "source": "原题", "question": "哪本书真正改变了你的三观？", "level": 2}, {"id": 86, "source": "原题", "question": "陷入自我怀疑时，你怎么走出来？", "level": 2}, {"id": 87, "source": "原题", "question": "你理解的自由是想做什么就做什么吗？", "level": 2}, {"id": 88, "source": "原题", "question": "面对冲突，你通常是战斗还是回避？", "level": 2}, {"id": 90, "source": "原题", "question": "你会坚持做一件不喜欢但正确的事吗？", "level": 2}, {"id": 97, "source": "原题", "question": "谁的眼神让你觉得有力量？", "level": 2}, {"id": 98, "source": "原题", "question": "那个让你心脏漏跳一拍的瞬间？", "level": 2}, {"id": 99, "source": "原题", "question": "你觉得什么样的活法，才算有价值？", "level": 2}, {"id": 135, "source": "新增", "question": "别人对你的第一印象，和真实的你差在哪里？", "level": 2}, {"id": 136, "source": "新增", "question": "有没有一种你曾不理解的选择，后来慢慢理解了？", "level": 2}, {"id": 137, "source": "新增", "question": "你最希望自己的哪一份努力，能被人看见？", "level": 2}, {"id": 138, "source": "新增", "question": "当别人认真听你说话时，你会从哪些细节感觉到？", "level": 2}, {"id": 139, "source": "新增", "question": "你需要安慰时，最不想听到哪句话？", "level": 2}, {"id": 140, "source": "新增", "question": "心情不好时，你希望别人怎样靠近你？", "level": 2}, {"id": 141, "source": "新增", "question": "有什么你做起来很轻松的事，其实花了很久才学会？", "level": 2}, {"id": 142, "source": "新增", "question": "哪一条曾经很听从的建议，你现在不再认同了？", "level": 2}, {"id": 143, "source": "新增", "question": "你是怎么发现自己其实不喜欢某件事的？", "level": 2}, {"id": 144, "source": "新增", "question": "决定放弃一件事之前，你通常会再给自己什么机会？", "level": 2}, {"id": 145, "source": "新增", "question": "什么样的事情，会让你愿意慢下来？", "level": 2}, {"id": 146, "source": "新增", "question": "你做重要决定时，最容易被什么影响？", "level": 2}, {"id": 147, "source": "新增", "question": "有没有一次说“不”，让你后来很感谢自己？", "level": 2}, {"id": 148, "source": "新增", "question": "你身上哪一个看似矛盾的地方，其实都有原因？", "level": 2}, {"id": 149, "source": "新增", "question": "你曾因为什么，改变对一个人的看法？", "level": 2}, {"id": 150, "source": "新增", "question": "别人向你求助时，你会怎样判断自己能帮到哪里？", "level": 2}, {"id": 151, "source": "新增", "question": "你怎么区分自己是真的想要，还是怕落后于别人？", "level": 2}, {"id": 152, "source": "新增", "question": "在哪些事情上，你特别需要自己做主？", "level": 2}, {"id": 153, "source": "新增", "question": "你判断一个人是否可靠，最看重什么？", "level": 2}, {"id": 154, "source": "新增", "question": "怎样的不同意见，你会愿意认真听下去？", "level": 2}, {"id": 155, "source": "新增", "question": "你如何分辨一个人是在关心你，还是在替你做决定？", "level": 2}, {"id": 156, "source": "新增", "question": "答应别人的事做不到时，你通常会怎么处理？", "level": 2}, {"id": 157, "source": "新增", "question": "什么样的道歉，会让你觉得对方真的明白了？", "level": 2}, {"id": 158, "source": "新增", "question": "当你想认真表达不满时，最难开口的是什么？", "level": 2}, {"id": 159, "source": "新增", "question": "发现自己错了以后，你最先想做什么？", "level": 2}, {"id": 160, "source": "新增", "question": "喜欢一个人时，你会变得更主动，还是更小心？", "level": 2}, {"id": 161, "source": "新增", "question": "你通常怎样让一个人知道，你在乎他？", "level": 2}, {"id": 162, "source": "新增", "question": "怎样的联系频率，会让你觉得舒服？", "level": 2}, {"id": 163, "source": "新增", "question": "两个人各做各的事时，怎样也能让你感到陪伴？", "level": 2}, {"id": 164, "source": "新增", "question": "你想独处的时候，会怎样告诉在乎你的人？", "level": 2}, {"id": 165, "source": "新增", "question": "你觉得哪些相似，会让两个人更容易相处？", "level": 2}, {"id": 166, "source": "新增", "question": "有没有一种与你不同的性格，反而很吸引你？", "level": 2}, {"id": 167, "source": "新增", "question": "一段关系里，哪些小事值得提前说清楚？", "level": 2}, {"id": 168, "source": "新增", "question": "你希望别人怎样对待你暂时无法实现的计划？", "level": 2}, {"id": 169, "source": "新增", "question": "如果生活宽裕一些，你最想把多出来的时间留给什么？", "level": 2}, {"id": 1, "source": "原题", "question": "至今仍藏在心底的遗憾是什么？", "level": 3}, {"id": 2, "source": "原题", "question": "这一生，你最害怕失去什么？", "level": 3}, {"id": 6, "source": "原题", "question": "你现在还相信“永远”吗？", "level": 3}, {"id": 8, "source": "原题", "question": "哪一次选择，让你到现在还在后悔？", "level": 3}, {"id": 12, "source": "原题", "question": "你现在最想原谅的人是谁？", "level": 3}, {"id": 14, "source": "原题", "question": "哪句话曾深深刺痛了你？", "level": 3}, {"id": 15, "source": "原题", "question": "那个让你在深夜偷偷想念的人是谁？", "level": 3}, {"id": 16, "source": "原题", "question": "眼下有没有不敢面对的事？", "level": 3}, {"id": 19, "source": "原题", "question": "有没有一句后悔没说出口的话？", "level": 3}, {"id": 22, "source": "原题", "question": "你觉得婚姻是必需品吗？", "level": 3}, {"id": 23, "source": "原题", "question": "哪些时刻你在假装坚强？", "level": 3}, {"id": 24, "source": "原题", "question": "绝望时，是什么让你看到了希望？", "level": 3}, {"id": 27, "source": "原题", "question": "如果时光倒流，最想弥补什么？", "level": 3}, {"id": 32, "source": "原题", "question": "有过百口莫辩、被深深误解的时刻吗？", "level": 3}, {"id": 39, "source": "原题", "question": "你觉得这一生被真正理解过吗？", "level": 3}, {"id": 40, "source": "原题", "question": "提起什么事，你就想立刻逃避？", "level": 3}, {"id": 41, "source": "原题", "question": "只要我不说，就没人知道的秘密是？", "level": 3}, {"id": 42, "source": "原题", "question": "哪段关系让你觉得意难平？", "level": 3}, {"id": 50, "source": "原题", "question": "临死前最想做的一件事？", "level": 3}, {"id": 52, "source": "原题", "question": "有没有什么爱好，曾救过你的命？", "level": 3}, {"id": 56, "source": "原题", "question": "最想打包扔掉的一段过去？", "level": 3}, {"id": 58, "source": "原题", "question": "分开后，你还会记得对方的好吗？", "level": 3}, {"id": 59, "source": "原题", "question": "哪种时刻让你感到蚀骨的孤独？", "level": 3}, {"id": 61, "source": "原题", "question": "现在的你，怎么定义“爱”？", "level": 3}, {"id": 65, "source": "原题", "question": "你曾为了谁，不顾一切地拼过命？", "level": 3}, {"id": 66, "source": "原题", "question": "你尝试过放下某种执念吗？成功了吗？", "level": 3}, {"id": 72, "source": "原题", "question": "你有过深夜痛哭、无法自抑的经历吗？", "level": 3}, {"id": 78, "source": "原题", "question": "最害怕重复经历什么样的痛苦？", "level": 3}, {"id": 84, "source": "原题", "question": "你敢在别人面前示弱哭泣吗？", "level": 3}, {"id": 93, "source": "原题", "question": "如果现在世界末日，你最想拥抱谁？", "level": 3}, {"id": 95, "source": "原题", "question": "哪怕全世界反对，也有人支持你吗？", "level": 3}, {"id": 170, "source": "新增", "question": "你怎么分辨自己是喜欢一个人，还是只是不想孤单？", "level": 3}, {"id": 171, "source": "新增", "question": "当你开始依赖一个人时，心里会有什么担心？", "level": 3}, {"id": 172, "source": "新增", "question": "在喜欢的人面前，你最容易藏起自己的哪一面？", "level": 3}, {"id": 173, "source": "新增", "question": "你需要经历什么，才愿意真正信任一个人？", "level": 3}, {"id": 174, "source": "新增", "question": "曾经的相处经历，让你对亲密关系多了哪份谨慎？", "level": 3}, {"id": 175, "source": "新增", "question": "在一段关系里，你最希望自己不用再假装什么？", "level": 3}, {"id": 176, "source": "新增", "question": "对你来说，怎样才算认真地开始一段关系？", "level": 3}, {"id": 177, "source": "新增", "question": "当两个人靠近的速度不一样时，你希望怎样沟通？", "level": 3}, {"id": 178, "source": "新增", "question": "还没确定关系时，什么会让你觉得被催促了？", "level": 3}, {"id": 179, "source": "新增", "question": "在亲密关系里，有没有你仍想留给自己的空间？", "level": 3}, {"id": 180, "source": "新增", "question": "当喜欢与个人边界发生冲突时，你最难坚持的是什么？", "level": 3}, {"id": 181, "source": "新增", "question": "你如何判断一份付出是出于愿意，还是害怕失去？", "level": 3}, {"id": 182, "source": "新增", "question": "如果对方暂时无法回应你的期待，你希望自己怎么面对？", "level": 3}, {"id": 183, "source": "新增", "question": "两个人争执时，什么话或举动是你不能接受的？", "level": 3}, {"id": 184, "source": "新增", "question": "争执结束后，什么会让你愿意重新靠近对方？", "level": 3}, {"id": 185, "source": "新增", "question": "你会从哪些变化里，发现自己正在一段关系里变得委屈？", "level": 3}, {"id": 186, "source": "新增", "question": "什么样的失望，你会愿意再给彼此一次机会？", "level": 3}, {"id": 187, "source": "新增", "question": "如果喜欢的人看到了你不体面的一面，你最希望他怎么回应？", "level": 3}, {"id": 188, "source": "新增", "question": "你有没有把“不给别人添麻烦”，当成不求助的理由？", "level": 3}, {"id": 189, "source": "新增", "question": "父母的相处方式里，有什么是你想延续或改变的？", "level": 3}, {"id": 190, "source": "新增", "question": "如果家人的期待与你的感情选择不同，你希望怎样处理？", "level": 3}, {"id": 191, "source": "新增", "question": "当两个人对花钱的想法不同，你希望怎样商量？", "level": 3}, {"id": 192, "source": "新增", "question": "如果彼此的发展方向暂时不同，你愿意怎样寻找共同的安排？", "level": 3}, {"id": 193, "source": "新增", "question": "一段长期关系里，你希望两个人共同承担哪些事情？", "level": 3}, {"id": 194, "source": "新增", "question": "当最初的心动变得平静，你会怎样理解这种变化？", "level": 3}, {"id": 195, "source": "新增", "question": "在关系里，什么会让你决定继续努力，什么会让你选择停下？", "level": 3}, {"id": 196, "source": "新增", "question": "你希望对方怎样告诉你，那些可能让你难过的真话？", "level": 3}, {"id": 197, "source": "新增", "question": "如果有一天你变得不像现在这样，你最希望对方仍理解什么？", "level": 3}, {"id": 198, "source": "新增", "question": "如果我们继续了解彼此，有什么是你希望我慢慢理解的？", "level": 3}, {"id": 199, "source": "新增", "question": "今天聊过之后，有没有一件事，你希望我们以后相处时能记得？", "level": 3}]</script>
+<script>
+'use strict';
+const TOPICS = JSON.parse(document.getElementById('topic-data').textContent);
+const BY_ID = new Map(TOPICS.map(q => [q.id,q]));
+const STORAGE_KEY = 'closer-topics-demo-v1';
+const NAMES = {'1':'轻轻聊','2':'多懂你一点','3':'再靠近一点'};
+const GENTLE_LINES = ['愿意分享多少，都由你决定','不着急，慢慢来','安静一会儿，也没关系','没有标准答案，说说你的感受就好','不想聊的，就轻轻跳过','先听对方说完，不急着给建议','一个小小的故事，也值得被认真听见','今天聊到这里，也很好'];
+const $ = id => document.getElementById(id);
+const SOUND_KEY='closer-topics-sound';
+const SOUND_SUPPORTED=Boolean(window.AudioContext || window.webkitAudioContext);
+let soundMuted=false;
+try{soundMuted=localStorage.getItem(SOUND_KEY)==='off';}catch{}
+let audioContext=null;
+let audioMaster=null;
+let audioReadyPromise=null;
+let activeReel=null;
+let soundGeneration=0;
+const soundingNodes=new Set();
+function renderSound(){
+ $('sound-toggle').disabled=!SOUND_SUPPORTED;
+ $('sound-toggle').setAttribute('aria-pressed',String(SOUND_SUPPORTED && !soundMuted));
+ const label=!SOUND_SUPPORTED?'当前浏览器不支持音效':soundMuted?'开启音效':'关闭音效';
+ $('sound-toggle').setAttribute('aria-label',label);$('sound-toggle').setAttribute('title',label);
+ $('sound-label').textContent=!SOUND_SUPPORTED?'音效不可用':soundMuted?'音效关':'音效开';
+ $('sound-waves').style.display=soundMuted || !SOUND_SUPPORTED?'none':'';
+ $('sound-cross').style.display=soundMuted || !SOUND_SUPPORTED?'':'none';
+}
+function unlockAudio(){
+ if(soundMuted || !SOUND_SUPPORTED || document.hidden)return Promise.resolve(false);
+ try{
+  if(!audioContext){const Audio=window.AudioContext || window.webkitAudioContext;audioContext=new Audio();audioMaster=audioContext.createGain();audioMaster.gain.value=.6;audioMaster.connect(audioContext.destination);}
+  if(audioContext.state==='running')return Promise.resolve(true);
+  if(!audioReadyPromise)audioReadyPromise=Promise.resolve(audioContext.resume()).then(()=>audioContext.state==='running').catch(()=>false).finally(()=>{audioReadyPromise=null;});
+  return audioReadyPromise;
+ }catch{return Promise.resolve(false);}
+}
+function stopSounds(){
+ soundGeneration++;
+ for(const record of [...soundingNodes]){try{record.source.stop();}catch{}try{record.source.disconnect();record.envelope.disconnect();}catch{}soundingNodes.delete(record);}
+}
+function tone(frequency,time,duration,volume,type='sine'){
+ if(soundMuted || document.hidden || !audioContext || audioContext.state!=='running')return;
+ try{
+  const source=audioContext.createOscillator(),envelope=audioContext.createGain();
+  source.type=type;source.frequency.setValueAtTime(frequency,time);source.frequency.exponentialRampToValueAtTime(Math.max(100,frequency*.38),time+duration);
+  envelope.gain.setValueAtTime(.0001,time);envelope.gain.exponentialRampToValueAtTime(volume,time+.003);envelope.gain.exponentialRampToValueAtTime(.0001,time+duration);
+  source.connect(envelope);envelope.connect(audioMaster);
+  const record={source,envelope};soundingNodes.add(record);
+  source.onended=()=>{source.disconnect();envelope.disconnect();soundingNodes.delete(record);};
+  source.start(time);source.stop(time+duration+.012);
+ }catch{/* Sound is optional; never interrupt drawing. */}
+}
+function playClick(){if(audioContext)tone(440,audioContext.currentTime,.055,.12,'triangle');}
+function playLanding(){if(audioContext){const now=audioContext.currentTime;tone(660,now,.11,.09,'sine');tone(990,now+.035,.13,.035,'sine');}}
+// Match each paper-row crossing to the same cubic Bézier used by the visual roll.
+function reelTickTimes(){
+ const bezier=(u,a,b)=>3*(1-u)*(1-u)*u*a+3*(1-u)*u*u*b+u*u*u;
+ return Array.from({length:20},(_,index)=>{const target=(index+1)/20;let lo=0,hi=1;for(let i=0;i<32;i++){const mid=(lo+hi)/2;if(bezier(mid,.65,1)<target)lo=mid;else hi=mid;}return 2800*bezier((lo+hi)/2,.12,.17);});
+}
+function scheduleRollSounds(animation){
+ if(!audioContext || soundMuted || document.hidden || !spinning)return;
+ const elapsed=Number(animation.currentTime)||0;
+ for(const ms of reelTickTimes())if(ms>elapsed+10 && ms<2750)tone(600,audioContext.currentTime+(ms-elapsed)/1000,.035,.095,'triangle');
+}
+async function toggleSound(){
+ soundMuted=!soundMuted;
+ try{localStorage.setItem(SOUND_KEY,soundMuted?'off':'on');}catch{}
+ stopSounds();renderSound();
+ if(!soundMuted){const generation=soundGeneration;if(await unlockAudio())if(generation===soundGeneration){playClick();if(activeReel)scheduleRollSounds(activeReel);}}
+}
+let storageOK = true;
+function freshState(){return {version:1,level:'1',seen:[],currentId:null};}
+function normalizeState(value){
+ if(!value || value.version!==1) return freshState();
+ const level=typeof value.level==='string' && Object.hasOwn(NAMES,value.level) ? value.level : '1';
+ const seen=Array.isArray(value.seen) ? [...new Set(value.seen.filter(id=>BY_ID.has(id)))] : [];
+ const current=BY_ID.get(value.currentId);
+ const currentId=current && String(current.level)===level ? current.id : null;
+ if(currentId!==null && !seen.includes(currentId)) seen.push(currentId);
+ return {version:1,level,seen,currentId};
+}
+function readState(){let raw;try{raw=localStorage.getItem(STORAGE_KEY);}catch{storageOK=false;return freshState();}try{return normalizeState(JSON.parse(raw));}catch{return freshState();}}
+let state=readState();
+let spinning=false;
+let tipIndex=0;
+let tipInterval=null;
+let tipTimeout=null;
+let tipChanging=false;
+function pool(level=state.level){return TOPICS.filter(q=>String(q.level)===level);}
+function remaining(level=state.level){const seen=new Set(state.seen);return pool(level).filter(q=>!seen.has(q.id));}
+function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch{storageOK=false;}$('storage-note').hidden=storageOK;$('storage-note').textContent=storageOK?'':'当前浏览器无法保存进度，本页仍可正常抽题。';}
+function randomItem(items){return items[Math.floor(Math.random()*items.length)];}
+function reducedMotion(){return Boolean(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);}
+function displayQuestion(text){
+ if(text.length>22) return text;
+ const split=text.indexOf('，');
+ return split>=7 && split<text.length-6 ? text.slice(0,split+1)+'\n'+text.slice(split+1) : text;
+}
+function render(){
+ const current=BY_ID.get(state.currentId);
+ const available=remaining();
+ document.querySelectorAll('[data-level]').forEach(button=>{button.setAttribute('aria-pressed',String(button.dataset.level===state.level));button.disabled=spinning;});
+ $('draw').disabled=spinning;
+ $('draw').textContent=spinning?'正在靠近…':available.length?'抽一个话题':'再聊一轮';
+ $('skip').disabled=spinning || !current || !available.length;
+ $('exhausted').hidden=spinning || available.length>0;
+ $('card').setAttribute('aria-busy',String(spinning));
+ $('rest').hidden=spinning;
+ $('reel').hidden=!spinning;
+ if(spinning) return;
+ const text=current?current.question:'从一个话题开始，慢慢认识彼此。';
+ $('question').textContent=displayQuestion(text);
+ $('question').className='question'+(text.length>22?' long':'');
+ const options=pool();
+ const index=current?options.findIndex(q=>q.id===current.id):0;
+ $('previous').textContent=options[(index-1+options.length)%options.length].question;
+ $('next').textContent=options[(index+1)%options.length].question;
+}
+function stopTipTimer(){
+ if(tipInterval!==null){clearInterval(tipInterval);tipInterval=null;}
+ if(tipTimeout!==null){clearTimeout(tipTimeout);tipTimeout=null;}
+ tipChanging=false;
+ $('gentle-text').classList.remove('changing');
+}
+function rotateTip(){
+ if(document.hidden || spinning || tipChanging) return;
+ const apply=()=>{tipTimeout=null;tipIndex=(tipIndex+1)%GENTLE_LINES.length;$('gentle-text').textContent=GENTLE_LINES[tipIndex];$('gentle-text').classList.remove('changing');tipChanging=false;};
+ if(reducedMotion()){apply();return;}
+ tipChanging=true;
+ $('gentle-text').classList.add('changing');
+ tipTimeout=setTimeout(apply,650);
+}
+function startTipTimer(){stopTipTimer();if(!document.hidden && !spinning)tipInterval=setInterval(rotateTip,15000);}
+async function draw(){
+ if(spinning) return;
+ stopSounds();
+ const generation=soundGeneration;
+ const audioReady=unlockAudio();
+ let didAnimate=false;
+ audioReady.then(ready=>{if(ready && generation===soundGeneration)playClick();}).catch(()=>{});
+ let available=remaining();
+ if(!available.length){const ids=new Set(pool().map(q=>q.id));state.seen=state.seen.filter(id=>!ids.has(id));available=remaining();}
+ const selected=randomItem(available);
+ spinning=true;stopTipTimer();render();
+ $('announcement').textContent='正在抽取话题';
+ try{
+  const track=$('track');track.replaceChildren();
+  const options=pool();const selectedIndex=options.findIndex(q=>q.id===selected.id);
+  const sequence=Array.from({length:23},()=>randomItem(options));
+  sequence[20]=options[(selectedIndex-1+options.length)%options.length];sequence[21]=selected;sequence[22]=options[(selectedIndex+1)%options.length];
+  sequence.forEach(q=>{const row=document.createElement('div');row.className='reel-row'+(q.question.length>22?' long':'');row.textContent=displayQuestion(q.question);track.append(row);});
+  if(!reducedMotion() && typeof track.animate==='function'){
+   const animation=track.animate([{transform:'translateY(0)'},{transform:'translateY(calc(var(--row) * -20))'}],{duration:2800,easing:'cubic-bezier(.12,.65,.17,1)',fill:'forwards'});
+   didAnimate=true;activeReel=animation;
+   audioReady.then(ready=>{if(ready && generation===soundGeneration)scheduleRollSounds(animation);}).catch(()=>{});
+   try{await animation.finished;}finally{animation.cancel();activeReel=null;}
+  }
+ }catch{/* Keep drawing functional if the browser does not support the visual effect. */}
+ if(didAnimate){stopSounds();playLanding();}
+ state.seen.push(selected.id);state.currentId=selected.id;spinning=false;save();render();startTipTimer();
+ $('announcement').textContent=selected.question;
+}
+function selectLevel(level){
+ if(spinning || !Object.hasOwn(NAMES,level) || level===state.level) return;
+ stopSounds();const generation=soundGeneration;unlockAudio().then(ready=>{if(ready && generation===soundGeneration)playClick();}).catch(()=>{});
+ state.level=level;state.currentId=null;save();render();
+ $('announcement').textContent=`已选择${NAMES[level]}`;
+}
+$('draw').addEventListener('click',draw);
+$('skip').addEventListener('click',draw);
+$('sound-toggle').addEventListener('click',toggleSound);
+document.querySelectorAll('[data-level]').forEach(button=>button.addEventListener('click',()=>selectLevel(button.dataset.level)));
+document.addEventListener('visibilitychange',()=>{if(document.hidden){stopTipTimer();stopSounds();}else startTipTimer();});
+window.addEventListener('pagehide',()=>{stopTipTimer();stopSounds();});
+window.addEventListener('pageshow',startTipTimer);
+save();render();renderSound();startTipTimer();
+</script>
+</body>
+</html>
