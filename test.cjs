@@ -27,7 +27,7 @@ function boot(raw=null,blocked=false,AudioClass=null,startMode='couples',friendR
  assert.deepEqual([1,2,3].map(n=>friendTopics.filter(q=>q.level===n).length),[70,70,60]);
  let welcome=boot(null,false,null,null);assert.equal(welcome.run('view'),'welcome');assert.equal(welcome.intervals.size,0);await welcome.run('draw()');assert.equal(welcome.run('state.seen.length'),0);
  welcome.run("chooseMode('invalid')");assert.equal(welcome.run('view'),'welcome');
- let f=boot();await f.run('draw()');const coupleState=f.run('JSON.stringify(state)');f.run('showWelcome()');assert.equal(f.intervals.size,0);f.run("chooseMode('friends')");assert.equal(f.run('state.seen.length'),0);assert.equal(f.get('mode-title').textContent,'朋友之间');assert.equal(f.run("NAMES['3']"),'聊聊心里话');
+ let f=boot();await f.run('draw()');const coupleState=f.run('JSON.stringify(state)');f.run('showWelcome()');assert.equal(f.intervals.size,0);f.run("chooseMode('friends')");assert.equal(f.run('state.seen.length'),0);assert.equal(f.get('mode-title').textContent,'朋友之间');assert.equal(f.run("NAMES['3']"),'相处与期待');
  for(const [level,total] of [['1',70],['2',70],['3',60]]){f.run(`selectLevel('${level}')`);for(let i=0;i<total;i++)await f.run('draw()');assert.equal(f.run('remaining().length'),0);}
  assert.equal(f.run('new Set(state.seen).size'),200);await f.run('draw()');assert.equal(f.run('state.seen.length'),141);assert.equal(f.run("remaining('1').length"),0);assert.equal(f.run("remaining('2').length"),0);
  const friendState=f.run('JSON.stringify(state)');f.run('showWelcome()');f.run("chooseMode('couples')");assert.equal(f.run('JSON.stringify(state)'),coupleState);f.run("chooseMode('friends')");assert.equal(f.run('JSON.stringify(state)'),friendState);
