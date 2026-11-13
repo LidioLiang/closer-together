@@ -67,14 +67,14 @@ body[data-mode="friends"] .gentle,body[data-mode="friends"] .sound-toggle,body[d
 @media(max-height:600px){.welcome{gap:20px;padding-top:14px}.art-scroll{width:100px;margin-top:-14px;margin-bottom:-16px}.welcome h1{font-size:38px}.welcome-header p{margin-top:5px}.welcome-note{padding-top:0}.audience-card{padding-top:8px;padding-bottom:8px}.welcome .welcome-art:not(.art-scroll){max-width:90px}.audiences{gap:14px}}
 @media(max-height:520px) and (orientation:landscape){.welcome{max-width:820px;width:100%;display:grid;grid-template-columns:1fr 1.25fr;column-gap:36px;row-gap:12px;align-content:center;padding:20px 28px}.welcome-header{grid-column:1;grid-row:1}.audiences{grid-column:2;grid-row:1 / span 2}.welcome-note{grid-column:1;grid-row:2;font-size:14px}.welcome-note::before,.welcome-note::after{display:none}.welcome h1{font-size:36px}.welcome-header p{font-size:15px}.art-scroll{width:120px}.audience-card{grid-template-columns:80px minmax(0,1fr) 10px}.audience-copy strong{font-size:25px}.audience-copy>span{font-size:12px}#chat{padding-top:54px}}
 @media(hover:none){.audience-card:hover{transform:none}}
-.welcome-header .welcome-intro{font-size:clamp(16px,4vw,20px);letter-spacing:.04em;line-height:1.8}.welcome-header .welcome-how{font-size:13px;letter-spacing:.03em;margin-top:14px;color:#865746}.level-description{font-size:14px;line-height:1.7;color:#89675a;margin:-8px 0 18px}.chat-guide{font-size:13px;line-height:1.7;margin:6px 0 0;color:#89675a}.levels{gap:12px}.level{font-size:20px}@media(max-width:700px){.level{font-size:clamp(13px,3.7vw,17px)}.level-description{font-size:13px;margin:-7px 0 14px}.chat-guide{font-size:12px}.welcome{gap:24px}.welcome-note{font-size:14px;letter-spacing:0;gap:10px}.welcome-note::before,.welcome-note::after{width:16px}}@media(max-height:520px) and (orientation:landscape){.level{font-size:13px}.level-description{grid-column:1;grid-row:3;margin:0 0 8px;font-size:12px}.actions{grid-row:4}.gentle{grid-row:5}#card{grid-row:1 / span 5}.chat-guide{font-size:11px}.welcome-header .welcome-intro{font-size:14px}.welcome-header .welcome-how{font-size:11px;margin-top:8px}}
+.welcome-header .welcome-intro{font-size:clamp(14px,3.5vw,16px);letter-spacing:.04em;line-height:1.8}.levels{gap:12px}.level{font-size:20px}@media(max-width:700px){.level{font-size:clamp(13px,3.7vw,17px)}.welcome{gap:24px}.welcome-note{font-size:14px;letter-spacing:0;gap:10px}.welcome-note::before,.welcome-note::after{width:16px}}@media(max-height:520px) and (orientation:landscape){.level{font-size:13px}.welcome-header .welcome-intro{font-size:13px}}
 </style>
 </head>
 <body data-view="welcome" data-mode="couples">
 <div class="ambient" aria-hidden="true"></div>
 <button hidden id="sound-toggle" class="sound-toggle" type="button" aria-pressed="true" aria-label="关闭音效" title="关闭音效"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4Z"/><path id="sound-waves" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/><path id="sound-cross" d="m16 9 5 6m0-6-5 6"/></svg></button>
 <main id="welcome" class="welcome" aria-labelledby="welcome-title">
-<header class="welcome-header"><span class="welcome-art art-scroll" aria-hidden="true"></span><h1 id="welcome-title" tabindex="-1">再靠近一点</h1><p class="welcome-intro">抽一个话题，让刚认识的两个人<br>从轻松聊天，到慢慢了解。</p><p class="welcome-how">选对象 · 选话题类型 · 抽题一起聊</p></header>
+<header class="welcome-header"><span class="welcome-art art-scroll" aria-hidden="true"></span><h1 id="welcome-title" tabindex="-1">再靠近一点</h1><p class="welcome-intro">从一个话题，慢慢了解彼此。</p></header>
 <nav class="audiences" aria-label="选择聊天对象">
 <button id="choose-couples" class="audience-card couple-card" type="button" data-mode="couples"><span class="welcome-art art-hearts" aria-hidden="true"></span><span class="audience-copy"><strong>心动之间</strong><span>有一点好感，想多了解彼此。</span></span><svg viewBox="0 0 16 28" aria-hidden="true"><path d="m3 3 10 11L3 25"/></svg></button>
 <button id="choose-friends" class="audience-card friend-card" type="button" data-mode="friends"><span class="welcome-art art-mugs" aria-hidden="true"></span><span class="audience-copy"><strong>朋友之间</strong><span>刚刚认识，也能自在聊聊。</span></span><svg viewBox="0 0 16 28" aria-hidden="true"><path d="m3 3 10 11L3 25"/></svg></button>
@@ -84,12 +84,11 @@ body[data-mode="friends"] .gentle,body[data-mode="friends"] .sound-toggle,body[d
 <button id="back-home" class="back-home" type="button" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m12 4-6 6 6 6"/></svg>切换对象</button>
 <main id="chat" hidden>
 <header><h1 id="mode-title" tabindex="-1">再靠近一点</h1><svg class="flourish" viewBox="0 0 240 28" aria-hidden="true"><path d="M8 21 C66 24 81 2 124 10 S177 29 232 12 M55 23 C104 21 120 0 174 8"/></svg><p id="mode-subtitle" class="subtitle">让每一次开口，都离彼此近一点</p></header>
-<nav class="levels" aria-label="选择话题类型" aria-describedby="level-description">
+<nav class="levels" aria-label="选择话题类型">
 <button type="button" class="level" data-level="1" aria-pressed="true">日常喜好</button>
 <button type="button" class="level" data-level="2" aria-pressed="false">经历与想法</button>
 <button type="button" class="level" data-level="3" aria-pressed="false">相处与期待</button>
 </nav>
-<p id="level-description" class="level-description" aria-live="polite">聊兴趣、习惯和生活小事，轻松开个头。</p>
 <section id="card" class="scroll-frame" aria-label="话题纸卷轴" aria-busy="false">
 <div class="well"><div class="sheet">
 <div class="selection" aria-hidden="true"></div>
@@ -98,7 +97,7 @@ body[data-mode="friends"] .gentle,body[data-mode="friends"] .sound-toggle,body[d
 </div></div>
 </section>
 <p id="announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
-<div class="actions"><button type="button" id="draw" class="primary">抽一个话题</button><p class="chat-guide">两个人都可以回答，不想聊就再抽一个。</p></div>
+<div class="actions"><button type="button" id="draw" class="primary">抽一个话题</button></div>
 <p id="exhausted" class="small-notice" hidden>这类话题已聊过一轮。可以换一类，也可以重新开始。</p>
 <footer class="gentle"><p id="gentle-text" aria-live="off">愿意分享多少，都由你决定</p></footer>
 <p id="storage-note" class="small-notice" hidden></p>
@@ -123,8 +122,8 @@ let TOPICS=BANKS[mode];
 let BY_ID=new Map(TOPICS.map(q=>[q.id,q]));
 let STORAGE_KEY=STORAGE_KEYS[mode];
 let NAMES=MODE_NAMES[mode];
-const COUPLE_LINES = ['愿意分享多少，都由你决定','不着急，慢慢来','安静一会儿，也没关系','没有标准答案，说说你的感受就好','不想聊的，就轻轻跳过','先听对方说完，不急着给建议','一个小小的故事，也值得被认真听见','今天聊到这里，也很好'];
-const FRIEND_LINES=['不用说得很有趣，真实就很好','想说多少，都可以','不急着给建议，先听听对方','有些感受不同，也没关系','一时不知道怎么说，就慢慢来','今天多懂对方一点，就很好','不想聊这一题，就再抽一个','安静地坐一会儿，也是一种陪伴'];
+const COUPLE_LINES = ['愿意分享多少，都由你决定','不着急，慢慢来','两个人都可以回答，不想聊就再抽一个。','没有标准答案，说说你的感受就好','不想聊的，就轻轻跳过','先听对方说完，不急着给建议','一个小小的故事，也值得被认真听见','今天聊到这里，也很好'];
+const FRIEND_LINES=['不用说得很有趣，真实就很好','想说多少，都可以','两个人都可以回答，不想聊就再抽一个。','有些感受不同，也没关系','一时不知道怎么说，就慢慢来','今天多懂对方一点，就很好','不想聊这一题，就再抽一个','安静地坐一会儿，也是一种陪伴'];
 let GENTLE_LINES=COUPLE_LINES;
 const $ = id => document.getElementById(id);
 const SOUND_KEY='closer-topics-sound';
@@ -218,7 +217,6 @@ function displayQuestion(text){
  return split>=7 && split<text.length-6 ? text.slice(0,split+1)+'\n'+text.slice(split+1) : text;
 }
 function render(){
- $('level-description').textContent=({'1':'聊兴趣、习惯和生活小事，轻松开个头。','2':'分享故事和看法，认识彼此的生活。','3':'聊沟通、节奏和边界，了解舒服的相处方式。'})[state.level];
  const current=BY_ID.get(state.currentId);
  const available=remaining();
  document.querySelectorAll('[data-level]').forEach(button=>{button.setAttribute('aria-pressed',String(button.dataset.level===state.level));button.disabled=spinning;});
